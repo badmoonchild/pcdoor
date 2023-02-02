@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="600" prefWidth="800" style="-fx-background-color: #90ee90;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.pcdoor.controllers.TelaPrincipal">
+
+   <left>
+      <VBox alignment="CENTER" layoutX="50.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="804.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <Pane prefHeight="608.0" prefWidth="800.0" style="-fx-background-color: #90ee90;">
+            <children>
+               <Label layoutX="292.0" layoutY="74.0" text="PCDOOR">
+                  <font>
+                     <Font name="Segoe UI Emoji" size="50.0" />
+                  </font>
+               </Label>
+               <Button alignment="CENTER" layoutX="392.0" layoutY="250.0" onAction="#carregarCadastroUsuario" prefHeight="50.0" prefWidth="249.0" style="-fx-background-color: #046104; -fx-background-radius: 30;" text="Cadastro de Usuário" textAlignment="CENTER" textFill="WHITE">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  </padding>
+                  <font>
+                     <Font name="Microsoft JhengHei" size="13.0" />
+                  </font>
+               </Button>
+               <ButtonBar layoutX="337.0" layoutY="310.0" />
+               <Text layoutX="52.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O PCDOOR tem como objetivo conectar pessoas com deficiências a estabelecimentos com acessibilidade e estrutura, se vocẽ possui um estabelecimento, cadastre-se, preencha os requisitos compatíveis com os requeridos, se vocẽ é frequentador de restaurantes, cinemas e etc, cadastre-se no site como usuário e avalie as acessibilidades disponibilizadas pelos estabelecimentos e também acesse as avaliações feitas por outros frequentadores." textAlignment="JUSTIFY" wrappingWidth="306.7161407470703">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+               </Text>
+               <Button alignment="CENTER" layoutX="392.0" layoutY="310.0" onAction="#carregarCadastroUsuario" prefHeight="50.0" prefWidth="249.0" style="-fx-background-color: #046104; -fx-background-radius: 30;" text="Cadastro de Estabelecimento" textAlignment="CENTER" textFill="WHITE">
+                  <padding>
+                     <Insets bottom="20.0" left="20.0" right="20.0" />
+                  </padding>
+                  <font>
+                     <Font name="Microsoft JhengHei" size="13.0" />
+                  </font>
+               </Button>
+            </children>
+         </Pane>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+
+   </center>
+
+</BorderPane>
