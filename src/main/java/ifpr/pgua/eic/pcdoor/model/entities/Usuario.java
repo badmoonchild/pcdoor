@@ -1,20 +1,15 @@
 package ifpr.pgua.eic.pcdoor.model.entities;
 
-import java.time.LocalDate;
-
 public class Usuario {
     
     private String nomeUsuario;
-    private LocalDate dataNascimento;
     private String email;
-    private String enderecoUsuario;
+    private String senha;
 
-    
-    public Usuario(String nomeUsuario, LocalDate dataNascimento, String email, String enderecoUsuario) {
+    public Usuario(String nomeUsuario, String email, String senha) {
         this.nomeUsuario = nomeUsuario;
-        this.dataNascimento = dataNascimento;
         this.email = email;
-        this.enderecoUsuario = enderecoUsuario;
+        this.senha = senha;
     }
 
 
@@ -27,15 +22,6 @@ public class Usuario {
     }
 
 
-    public LocalDate getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(LocalDate dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-
     public String getEmail() {
         return email;
     }
@@ -45,12 +31,12 @@ public class Usuario {
     }
 
 
-    public String getEnderecoUsuario() {
-        return enderecoUsuario;
+    public String getSenha() {
+        return senha;
     }
-    
-    public void setEnderecoUsuario(String enderecoUsuario) {
-        this.enderecoUsuario = enderecoUsuario;
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
 }

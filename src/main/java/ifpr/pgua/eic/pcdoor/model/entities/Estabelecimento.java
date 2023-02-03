@@ -2,28 +2,27 @@ package ifpr.pgua.eic.pcdoor.model.entities;
 
 public class Estabelecimento {
 
-    private String cnpj;
     private String nomeEstabelecimento;
+    private String emailEstabelecimento;
+    private String senhaEstabelecimento;
     private String tipoEstabelecimento;
-    private String enderecoEstabelecimento;
+    private String cnpj;
+    private String descricaoAcessibilidade;
     private int pontuacaoMedia;
+    private String endereco;
+    
 
-
-    public Estabelecimento(String cnpj, String nomeEstabelecimento, String tipoEstabelecimento, String enderecoEstabelecimento, int pontuacaoMedia) {
-        this.cnpj = cnpj;
+    public Estabelecimento(String nomeEstabelecimento, String emailEstabelecimento, String senhaEstabelecimento,
+            String tipoEstabelecimento, String cnpj, String descricaoAcessibilidade, int pontuacaoMedia,
+            String endereco) {
         this.nomeEstabelecimento = nomeEstabelecimento;
+        this.emailEstabelecimento = emailEstabelecimento;
+        this.senhaEstabelecimento = senhaEstabelecimento;
         this.tipoEstabelecimento = tipoEstabelecimento;
-        this.enderecoEstabelecimento = enderecoEstabelecimento;
-        this.pontuacaoMedia = pontuacaoMedia;
-    }
-
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
+        this.descricaoAcessibilidade = descricaoAcessibilidade;
+        this.pontuacaoMedia = pontuacaoMedia;
+        this.endereco = endereco;
     }
 
 
@@ -36,6 +35,24 @@ public class Estabelecimento {
     }
 
 
+    public String getEmailEstabelecimento() {
+        return emailEstabelecimento;
+    }
+
+    public void setEmailEstabelecimento(String emailEstabelecimento) {
+        this.emailEstabelecimento = emailEstabelecimento;
+    }
+
+
+    public String getSenhaEstabelecimento() {
+        return senhaEstabelecimento;
+    }
+
+    public void setSenhaEstabelecimento(String senhaEstabelecimento) {
+        this.senhaEstabelecimento = senhaEstabelecimento;
+    }
+
+
     public String getTipoEstabelecimento() {
         return tipoEstabelecimento;
     }
@@ -45,16 +62,24 @@ public class Estabelecimento {
     }
 
 
-
-    public String getEnderecoEstabelecimento() {
-        return enderecoEstabelecimento;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setEnderecoEstabelecimento(String enderecoEstabelecimento) {
-        this.enderecoEstabelecimento = enderecoEstabelecimento;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
+
     
-    
+    public String getDescricaoAcessibilidade() {
+        return descricaoAcessibilidade;
+    }
+
+    public void setDescricaoAcessibilidade(String descricaoAcessibilidade) {
+        this.descricaoAcessibilidade = descricaoAcessibilidade;
+    }
+
+
     public int getPontuacaoMedia() {
         return pontuacaoMedia;
     }
@@ -63,4 +88,12 @@ public class Estabelecimento {
         this.pontuacaoMedia = pontuacaoMedia;
     }
 
+
+    public String getEndereco() {
+        return endereco;
+    }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+    
 }
