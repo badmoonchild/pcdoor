@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import ifpr.pgua.eic.pcdoor.controllers.TelaCadastroUsuario;
+import ifpr.pgua.eic.pcdoor.controllers.TelaCadastros;
 import ifpr.pgua.eic.pcdoor.controllers.TelaPrincipal;
 import ifpr.pgua.eic.pcdoor.model.FabricaConexoes;
 import ifpr.pgua.eic.pcdoor.utils.Navigator.BaseAppNavigator;
@@ -55,6 +56,7 @@ public class App extends BaseAppNavigator {
     @Override
     public void registrarTelas() {
         registraTela("PRINCIPAL", new ScreenRegistryFXML(getClass(), "fxml/principal.fxml", (o)->new TelaPrincipal()));
+        registraTela("CADASTROS", new ScreenRegistryFXML(getClass(), "fxml/cadastros.fxml", (o)->new TelaCadastros()));
         registraTela("CADASTROUSUARIO", new ScreenRegistryFXML(getClass(), "fxml/cadastroUsuario.fxml", (o)->new TelaCadastroUsuario()));
         
         //REGISTRAR AS OUTRAS TELAS

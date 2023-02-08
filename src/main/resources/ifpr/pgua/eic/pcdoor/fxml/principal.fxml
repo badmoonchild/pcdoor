@@ -21,7 +21,7 @@
                      <Font name="Segoe UI Emoji" size="50.0" />
                   </font>
                </Label>
-               <Button alignment="CENTER" layoutX="392.0" layoutY="250.0" onAction="#carregarCadastroUsuario" prefHeight="50.0" prefWidth="249.0" style="-fx-background-color: #046104; -fx-background-radius: 30;" text="Cadastro de Usuário" textAlignment="CENTER" textFill="WHITE">
+               <Button alignment="CENTER" layoutX="392.0" layoutY="250.0" onAction="#carregarTelaCadastros" prefHeight="50.0" prefWidth="249.0" style="-fx-background-color: #046104; -fx-background-radius: 30;" text="Criar nova conta" textAlignment="CENTER" textFill="WHITE">
                   <padding>
                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                   </padding>
@@ -35,14 +35,6 @@
                      <Font size="15.0" />
                   </font>
                </Text>
-               <Button alignment="CENTER" layoutX="392.0" layoutY="310.0" onAction="#carregarCadastroUsuario" prefHeight="50.0" prefWidth="249.0" style="-fx-background-color: #046104; -fx-background-radius: 30;" text="Cadastro de Estabelecimento" textAlignment="CENTER" textFill="WHITE">
-                  <padding>
-                     <Insets bottom="20.0" left="20.0" right="20.0" />
-                  </padding>
-                  <font>
-                     <Font name="Microsoft JhengHei" size="13.0" />
-                  </font>
-               </Button>
             </children>
          </Pane>
          <padding>
