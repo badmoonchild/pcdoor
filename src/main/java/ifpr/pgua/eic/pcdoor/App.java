@@ -11,7 +11,11 @@ import java.io.IOException;
 import ifpr.pgua.eic.pcdoor.controllers.TelaCadastroUsuario;
 import ifpr.pgua.eic.pcdoor.controllers.TelaCadastros;
 import ifpr.pgua.eic.pcdoor.controllers.TelaPrincipal;
+import ifpr.pgua.eic.pcdoor.controllers.viewmodels.TelaCadastroUsuarioViewModel;
 import ifpr.pgua.eic.pcdoor.model.FabricaConexoes;
+import ifpr.pgua.eic.pcdoor.model.daos.JDBCUsuarioDAO;
+import ifpr.pgua.eic.pcdoor.model.daos.UsuarioDAO;
+import ifpr.pgua.eic.pcdoor.model.repositories.UsuarioRepository;
 import ifpr.pgua.eic.pcdoor.utils.Navigator.BaseAppNavigator;
 import ifpr.pgua.eic.pcdoor.utils.Navigator.ScreenRegistryFXML;
 
@@ -21,15 +25,17 @@ import ifpr.pgua.eic.pcdoor.utils.Navigator.ScreenRegistryFXML;
  */
 public class App extends BaseAppNavigator {
 
+    private UsuarioDAO usuarioDAO;
+    private UsuarioRepository usuarioRepository;
 
-    //DEFINIR A FABRICA DE CONEXÕES, DAOS e REPOSITÓRIOS
 
     @Override
     public void init() throws Exception {
-        // TODO Auto-generated method stub
+
         super.init();
         
-        //INSTANCIAR FABRICA, DAOS E REPOSITÓRIOS
+        usuarioDAO = new JDBCUsuarioDAO(FabricaConexoes.getInstance());
+        usuarioRepository = new UsuarioRepository(usuarioDAO);
     
     }
 
@@ -57,7 +63,7 @@ public class App extends BaseAppNavigator {
     public void registrarTelas() {
         registraTela("PRINCIPAL", new ScreenRegistryFXML(getClass(), "fxml/principal.fxml", (o)->new TelaPrincipal()));
         registraTela("CADASTROS", new ScreenRegistryFXML(getClass(), "fxml/cadastros.fxml", (o)->new TelaCadastros()));
-        registraTela("CADASTROUSUARIO", new ScreenRegistryFXML(getClass(), "fxml/cadastroUsuario.fxml", (o)->new TelaCadastroUsuario()));
+        registraTela("CADASTROUSUARIO", new ScreenRegistryFXML(getClass(), "fxml/cadastroUsuario.fxml", (o)->new TelaCadastroUsuario(new TelaCadastroUsuarioViewModel(usuarioRepository))));
         
         //REGISTRAR AS OUTRAS TELAS
 

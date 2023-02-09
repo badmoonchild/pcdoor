@@ -2,14 +2,28 @@ package ifpr.pgua.eic.pcdoor.model.entities;
 
 public class Usuario {
     
+    private int idUsuario;
     private String nomeUsuario;
-    private String email;
-    private String senha;
+    private String emailUsuario;
+    private String senhaUsuario;
 
-    public Usuario(String nomeUsuario, String email, String senha) {
+    public Usuario(int idUsuario, String nomeUsuario, String emailUsuario, String senhaUsuario) {
+        this.idUsuario = idUsuario;
         this.nomeUsuario = nomeUsuario;
-        this.email = email;
-        this.senha = senha;
+        this.emailUsuario = emailUsuario;
+        this.senhaUsuario = senhaUsuario;
+    }
+
+    public Usuario(String nomeUsuario, String emailUsuario, String senhaUsuario){
+        this(-1, nomeUsuario, emailUsuario, senhaUsuario);
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int id) {
+        this.idUsuario = id;
     }
 
 
@@ -22,21 +36,21 @@ public class Usuario {
     }
 
 
-    public String getEmail() {
-        return email;
+    public String getEmailUsuario() {
+        return emailUsuario;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailUsuario(String emailUsuario) {
+        this.emailUsuario = emailUsuario;
     }
 
 
-    public String getSenha() {
-        return senha;
+    public String getSenhaUsuario() {
+        return senhaUsuario;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+    public void setSenha(String senhaUsuario) {
+        this.senhaUsuario = senhaUsuario;
     }
 
 }

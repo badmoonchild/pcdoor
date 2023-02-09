@@ -25,15 +25,26 @@ public class JDBCUsuarioDAO implements UsuarioDAO{
 
     @Override
     public Result cadastrar(Usuario usuario) {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
-    @Override
-    public List<Usuario> listaUsuario() {
-        // TODO Auto-generated method stub
-        return null;
-    }
+        try{
+            Connection con = fabricaConexoes.getConnection();
+            
+            PreparedStatement pstm = con.prepareStatement("INSERT INTO pcdoor_Usuario(nomeUsuario,emailUsuario,senhaUsuario) VALUES (?,?,?)");
 
+            pstm.setString(1, usuario.getNomeUsuario());
+            pstm.setString(2, usuario.getEmailUsuario());
+            pstm.setString(3, usuario.getSenhaUsuario());
+
+            pstm.execute();
+
+            pstm.close();
+            con.close();
+            return Result.success("Usuario cadastrado com sucesso!");
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return Result.fail(e.getMessage());
+        }
+    }
     
 }
