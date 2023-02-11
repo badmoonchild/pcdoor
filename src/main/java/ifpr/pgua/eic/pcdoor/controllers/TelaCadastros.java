@@ -10,6 +10,11 @@ public class TelaCadastros{
         BaseAppNavigator.pushScreen("CADASTROUSUARIO");
     }
 
+    @FXML
+    private void carregarCadastroEstabelecimento(){
+        BaseAppNavigator.pushScreen("CADASTROESTABELECIMENTO");
+    }
+
     public void voltar() {
         BaseAppNavigator.popScreen();
     }

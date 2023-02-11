@@ -2,27 +2,42 @@ package ifpr.pgua.eic.pcdoor.model.entities;
 
 public class Estabelecimento {
 
+    private int idEstabelecimento; 
     private String nomeEstabelecimento;
     private String emailEstabelecimento;
     private String senhaEstabelecimento;
     private String tipoEstabelecimento;
     private String cnpj;
     private String descricaoAcessibilidade;
-    private int pontuacaoMedia;
+    private int pontuacao;
     private String endereco;
     
-
-    public Estabelecimento(String nomeEstabelecimento, String emailEstabelecimento, String senhaEstabelecimento,
-            String tipoEstabelecimento, String cnpj, String descricaoAcessibilidade, int pontuacaoMedia,
-            String endereco) {
+    public Estabelecimento(int idEstabelecimento, String nomeEstabelecimento, String emailEstabelecimento,
+            String senhaEstabelecimento, String tipoEstabelecimento, String cnpj, String descricaoAcessibilidade,
+            int pontuacao, String endereco) {
+        this.idEstabelecimento = idEstabelecimento;
         this.nomeEstabelecimento = nomeEstabelecimento;
         this.emailEstabelecimento = emailEstabelecimento;
         this.senhaEstabelecimento = senhaEstabelecimento;
         this.tipoEstabelecimento = tipoEstabelecimento;
         this.cnpj = cnpj;
         this.descricaoAcessibilidade = descricaoAcessibilidade;
-        this.pontuacaoMedia = pontuacaoMedia;
+        this.pontuacao = pontuacao;
         this.endereco = endereco;
+    }
+
+    public Estabelecimento(String nomeEstabelecimento, String emailEstabelecimento,
+            String senhaEstabelecimento, String tipoEstabelecimento, String cnpj, String descricaoAcessibilidade,
+            int pontuacao, String endereco) {
+        this(-1, nomeEstabelecimento, emailEstabelecimento, senhaEstabelecimento, tipoEstabelecimento, cnpj, descricaoAcessibilidade, pontuacao, endereco);
+    }
+
+    public int getIdEstabelecimento() {
+        return idEstabelecimento;
+    }
+
+    public void setIdEstabelecimento(int idEstabelecimento) {
+        this.idEstabelecimento = idEstabelecimento;
     }
 
 
@@ -80,12 +95,12 @@ public class Estabelecimento {
     }
 
 
-    public int getPontuacaoMedia() {
-        return pontuacaoMedia;
+    public int getPontuacao() {
+        return pontuacao;
     }
 
-    public void setPontuacaoMedia(int pontuacaoMedia) {
-        this.pontuacaoMedia = pontuacaoMedia;
+    public void setPontuacao(int pontuacaoMedia) {
+        this.pontuacao = pontuacaoMedia;
     }
 
 
