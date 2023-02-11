@@ -3,44 +3,112 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.pcdoor.controllers.TelaCadastroEstabelecimento">
+<BorderPane styleClass="backgroundColor" stylesheets="@imagens/css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.pcdoor.controllers.TelaCadastroEstabelecimento">
+   <center>
 
-   <left>
-      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="155.0" spacing="10.0">
-         <Pane prefHeight="78.0" prefWidth="135.0">
+   </center>
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="837.0" prefWidth="1312.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <Pane prefHeight="780.0" prefWidth="1460.0">
             <children>
-
-            <TextField fx:id="tfNome" layoutX="536.0" layoutY="100.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Nome" />
-            <TextField fx:id="tfEmail" layoutX="536.0" layoutY="200.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Email" />
-            <TextField fx:id="tfSenha" layoutX="536.0" layoutY="300.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Senha" />
-            <TextField fx:id="tfTipo" layoutX="536.0" layoutY="400.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Tipo" />
-            <TextField fx:id="tfCnpj" layoutX="536.0" layoutY="500.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Cnpj" />
-            <TextField fx:id="tfDescricao" layoutX="536.0" layoutY="600.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Descricao" />
-            <TextField fx:id="tfEndereco" layoutX="536.0" layoutY="700.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Endereco" />
-               <Label layoutX="14.0" layoutY="27.0" text="SAIBA MAIS">
+               <ImageView fitHeight="135.0" fitWidth="93.0" layoutX="131.0" layoutY="212.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Nosso%20time.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="717.0" fitWidth="1202.0" layoutX="-9.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/bons-background.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="492.0" fitWidth="352.0" layoutX="1042.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Ellipse%2093%20(Stroke).png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="492.0" fitWidth="352.0" layoutX="-11.0" layoutY="-66.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Ellipse%2092%20(Stroke).png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="325.0" fitWidth="485.0" layoutX="14.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/6144599_3154099-removebg-preview.png" />
+                  </image>
+               </ImageView>
+            <TextField fx:id="tfEmail" layoutX="529.0" layoutY="269.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Email" style="-fx-background-radius: 30; -fx-border-color: #4B0082; -fx-border-radius: 30; -fx-border-width: 2;" />
+            <TextField fx:id="tfSenha" layoutX="529.0" layoutY="320.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Senha" style="-fx-background-radius: 30; -fx-border-color: #4B0082; -fx-border-width: 2; -fx-border-radius: 30;" />
+            <TextField fx:id="tfTipo" layoutX="529.0" layoutY="369.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Tipo" style="-fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: #4B0082; -fx-border-width: 2;" />
+            <TextField fx:id="tfCnpj" layoutX="529.0" layoutY="421.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Cnpj" style="-fx-background-radius: 30; -fx-border-color: #4B0082; -fx-border-radius: 30; -fx-border-width: 2;" />
+            <TextField fx:id="tfDescricao" layoutX="529.0" layoutY="473.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Descricao" style="-fx-background-radius: 30; -fx-border-color: #4B0082; -fx-border-radius: 30; -fx-border-width: 2;" />
+            <TextField fx:id="tfEndereco" layoutX="529.0" layoutY="532.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Endereco" style="-fx-background-radius: 30; -fx-border-color: #4B0082; -fx-border-radius: 30; -fx-border-width: 2;" />
+               <Label layoutX="437.0" layoutY="84.0" prefHeight="117.0" prefWidth="544.0" text="Cadastre sua empresa">
                   <font>
-                     <Font name="System Bold" size="20.0" />
+                     <Font name="System Bold" size="50.0" />
                   </font>
+                  <textFill>
+                     <LinearGradient endX="1.0" endY="1.0" startY="0.981042654028436">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.2763157784938812" green="0.12792398035526276" blue="0.2614766061306" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color red="0.3686274588108063" green="0.22745098173618317" blue="0.3529411852359772" />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </textFill>
                </Label>
+         
+                  <TextField fx:id="tfNome" layoutX="529.0" layoutY="220.0" maxWidth="300" prefHeight="42.0" prefWidth="300.0" promptText="Nome" style="-fx-background-radius: 30; -fx-border-color: #4B0082; -fx-border-radius: 30; -fx-border-width: 2;" />
+               <ImageView fitHeight="391.0" fitWidth="380.0" layoutX="902.0" layoutY="221.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/ezgif.com-gif-maker__1_-removebg-preview.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="139.0" fitWidth="52.0" layoutX="26.0" layoutY="616.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Nosso%20time.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="130.0" fitWidth="52.0" layoutX="1240.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Nosso%20time.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="251.0" fitWidth="257.0" layoutX="272.0" layoutY="586.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Ellipse%2090%20(Stroke).png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="278.0" fitWidth="287.0" layoutX="694.0" layoutY="-66.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Ellipse%2090%20(Stroke).png" />
+                  </image>
+               </ImageView>
+               <Button layoutX="529.0" layoutY="602.0" onAction="#voltar" prefHeight="40.0" prefWidth="121.0" style="-fx-background-radius: 30;" text="voltar" textFill="WHITE" />
+               <Button layoutX="709.0" layoutY="602.0" onAction="#cadastrar" prefHeight="40.0" prefWidth="120.0" style="-fx-background-radius: 30;" text="cadastrar" textAlignment="CENTER" textFill="WHITE" />
             </children>
          </Pane>
-         <Button onAction="#cadastrar" prefHeight="40.0" prefWidth="100.0" text="cadastrar" />
-         <Button onAction="#voltar" prefHeight="40.0" prefWidth="100.0" text="voltar" />
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
-   </left>
-   <center>
-
-   </center>
+   </top>
 
 </BorderPane>

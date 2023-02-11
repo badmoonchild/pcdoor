@@ -21,20 +21,32 @@
       <VBox alignment="TOP_CENTER" prefHeight="652.0" prefWidth="1351.0" spacing="10.0" BorderPane.alignment="TOP_CENTER">
          <Pane prefHeight="839.0" prefWidth="1331.0">
             <children>
-               <Label alignment="CENTER" layoutX="414.0" layoutY="177.0" text="Cadastre-se como:" textAlignment="CENTER">
+               <ImageView fitHeight="146.0" fitWidth="74.0" layoutX="826.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Nosso%20time.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="180.0" fitWidth="63.0" layoutX="82.0" layoutY="555.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Nosso%20time.png" />
+                  </image>
+               </ImageView>
+               <Label alignment="CENTER" layoutX="425.0" layoutY="183.0" text="Cadastre-se como:" textAlignment="CENTER">
                   <font>
-                     <Font name="System Bold" size="50.0" />
+                     <Font size="50.0" />
                   </font>
                </Label>
-               <Button layoutX="565.0" layoutY="323.0" onAction="#carregarCadastroEstabelecimento" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 30;" text="Estabelecimento" textFill="WHITE" />
-               <Button layoutX="565.0" layoutY="276.0" onAction="#carregarCadastroUsuario" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 30;" text="Cliente" textFill="WHITE" />
-               <Button layoutX="565.0" layoutY="370.0" onAction="#voltar" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 30;" text="voltar" textFill="WHITE" />
+               <ImageView fitHeight="482.0" fitWidth="323.0" layoutX="1065.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Ellipse%2093%20(Stroke).png" />
+                  </image>
+               </ImageView>
                <ImageView fitHeight="326.0" fitWidth="535.0" layoutX="362.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@imagens/voluntarios-ajudando-amigos-com-deficiencia-em-caminhadas-ao-ar-livre_74855-7933-removebg-preview.png" />
                   </image>
                </ImageView>
-               <Label alignment="CENTER" layoutX="519.0" layoutY="110.0" text="PCDOOR" textAlignment="CENTER">
+               <Label alignment="CENTER" layoutX="487.0" layoutY="110.0" text="PCDOOR" textAlignment="CENTER">
                   <font>
                      <Font name="System Bold" size="50.0" />
                   </font>
@@ -55,11 +67,24 @@
                      </LinearGradient>
                   </textFill>
                </Label>
-               <ImageView fitHeight="74.0" fitWidth="82.0" layoutX="726.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="74.0" fitWidth="82.0" layoutX="695.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@imagens/open-door.png" />
                   </image>
                </ImageView>
+               <ImageView fitHeight="482.0" fitWidth="323.0" layoutX="-35.0" layoutY="-37.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Ellipse%2092%20(Stroke).png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="482.0" fitWidth="323.0" layoutX="1065.0" layoutY="-206.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Ellipse%2093%20(Stroke).png" />
+                  </image>
+               </ImageView>
+               <Button layoutX="545.0" layoutY="370.0" onAction="#voltar" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 30;" text="voltar" textFill="WHITE" />
+               <Button layoutX="545.0" layoutY="323.0" onAction="#carregarCadastroEstabelecimento" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 30;" text="Estabelecimento" textFill="WHITE" />
+               <Button layoutX="545.0" layoutY="276.0" onAction="#carregarCadastroUsuario" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 30;" text="Cliente" textFill="WHITE" />
             </children>
             <VBox.margin>
                <Insets />

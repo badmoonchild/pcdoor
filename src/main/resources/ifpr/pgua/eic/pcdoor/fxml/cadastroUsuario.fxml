@@ -23,16 +23,26 @@
       <VBox alignment="TOP_CENTER" prefHeight="771.0" prefWidth="1253.0" spacing="10.0" BorderPane.alignment="CENTER">
          <Pane prefHeight="767.0" prefWidth="1255.0">
             <children>
+               <ImageView fitHeight="570.0" fitWidth="358.0" layoutX="1022.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Ellipse%2093%20(Stroke).png" />
+                  </image>
+               </ImageView>
                <Label layoutX="467.0" layoutY="138.0" prefHeight="98.0" prefWidth="252.0" text="PCDOOR" textAlignment="CENTER">
                   <font>
                      <Font name="Arial" size="50.0" />
                   </font>
                   <textFill>
-                     <LinearGradient endX="1.0" endY="0.4834123222748815">
+                     <LinearGradient endX="1.0" endY="0.4834123222748815" startY="0.47393364928909953">
                         <stops>
                            <Stop>
                               <color>
-                                 <Color red="0.3552631437778473" green="0.3552631437778473" blue="0.3552631437778473" />
+                                 <Color red="0.38296782970428467" green="0.03399122878909111" blue="0.40789473056793213" />
+                              </color>
+                           </Stop>
+                           <Stop offset="0.006711409395973154">
+                              <color>
+                                 <Color red="0.38296782970428467" green="0.03399122878909111" blue="0.40789473056793213" />
                               </color>
                            </Stop>
                            <Stop offset="1.0">
@@ -45,30 +55,15 @@
                   </textFill>
                </Label>
                <TextField fx:id="tfNome" layoutX="502.0" layoutY="300.0" promptText="Digite seu nome" style="-fx-background-radius: 30; -fx-background-color: #F; -fx-border-color: #520078; -fx-border-radius: 30; -fx-border-width: 2;" />
-               <Text layoutX="434.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastre-se" textAlignment="CENTER" wrappingWidth="236.478515625">
+               <Text layoutX="458.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastre-se" textAlignment="CENTER" wrappingWidth="236.478515625">
                   <font>
-                     <Font name="System Bold" size="30.0" />
-                  </font>
-               </Text>
-               <Text layoutX="434.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" textAlignment="CENTER" wrappingWidth="66.869140625">
-                  <font>
-                     <Font size="18.0" />
-                  </font>
-               </Text>
-               <Text layoutX="434.0" layoutY="361.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail:" textAlignment="CENTER" wrappingWidth="66.869140625">
-                  <font>
-                     <Font size="18.0" />
-                  </font>
-               </Text>
-               <Text layoutX="434.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha:" textAlignment="CENTER" wrappingWidth="66.869140625">
-                  <font>
-                     <Font size="18.0" />
+                     <Font size="30.0" />
                   </font>
                </Text>
                <Button layoutX="576.0" layoutY="471.0" onAction="#cadastrar" prefHeight="39.0" prefWidth="103.0" style="-fx-background-radius: 30;" text="Cadastrar" textFill="WHITE" />
                <TextField fx:id="tfSenha" layoutX="502.0" layoutY="380.0" promptText="Digite sua senha" style="-fx-background-radius: 30; -fx-background-color: #FFF; -fx-border-color: #520078; -fx-border-radius: 30; -fx-border-width: 2;" />
                <TextField fx:id="tfEmail" layoutX="502.0" layoutY="340.0" promptText="Digite seu e-mail" style="-fx-background-radius: 30; -fx-background-color: #F; -fx-border-color: #520078; -fx-border-radius: 30; -fx-border-width: 2;" />
-               <ImageView fitHeight="360.0" fitWidth="580.0" layoutX="694.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="360.0" fitWidth="580.0" layoutX="762.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@imagens/cadastrousuario.png" />
                   </image>
@@ -77,6 +72,21 @@
                <ImageView fitHeight="74.0" fitWidth="77.0" layoutX="688.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@imagens/open-door.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="476.0" fitWidth="306.0" layoutX="-47.0" layoutY="-81.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Ellipse%2092%20(Stroke).png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="159.0" fitWidth="84.0" layoutX="1129.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Nosso%20time.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="159.0" fitWidth="84.0" layoutX="64.0" layoutY="545.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/Nosso%20time.png" />
                   </image>
                </ImageView>
             </children>
