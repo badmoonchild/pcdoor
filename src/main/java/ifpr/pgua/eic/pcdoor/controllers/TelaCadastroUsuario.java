@@ -7,7 +7,6 @@ import ifpr.pgua.eic.pcdoor.model.repositories.UsuarioRepository;
 import ifpr.pgua.eic.pcdoor.utils.Navigator.BaseAppNavigator;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class TelaCadastroUsuario {
@@ -19,7 +18,7 @@ public class TelaCadastroUsuario {
     private TextField tfEmail;
 
     @FXML
-    private PasswordField tfSenha;
+    private TextField tfSenha;
 
     private UsuarioRepository repository;
 

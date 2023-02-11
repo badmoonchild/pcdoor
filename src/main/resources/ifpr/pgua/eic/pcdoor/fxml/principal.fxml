@@ -4,24 +4,45 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="600" prefWidth="800" style="-fx-background-color: #90ee90;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.pcdoor.controllers.TelaPrincipal">
+<BorderPane prefHeight="600.0" prefWidth="1021.0" styleClass="backgroundColor" stylesheets="@imagens/css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.pcdoor.controllers.TelaPrincipal">
 
    <left>
-      <VBox alignment="CENTER" layoutX="50.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="804.0" spacing="10.0" BorderPane.alignment="CENTER">
-         <Pane prefHeight="608.0" prefWidth="800.0" style="-fx-background-color: #90ee90;">
+      <VBox alignment="CENTER" layoutX="50.0" layoutY="50.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="1174.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <Pane prefHeight="636.0" prefWidth="1154.0">
             <children>
-               <Label layoutX="292.0" layoutY="74.0" text="PCDOOR">
+               <Label layoutX="605.0" layoutY="22.0" prefHeight="51.0" prefWidth="245.0" text="PCDOOR">
                   <font>
-                     <Font name="Segoe UI Emoji" size="50.0" />
+                     <Font name="Arial" size="50.0" />
                   </font>
+                  <textFill>
+                     <LinearGradient endX="0.7203791469194313" endY="1.0" startX="0.45023696682464454">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color red="0.30263158679008484" green="0.2970272898674011" blue="0.2970272898674011" />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </textFill>
                </Label>
-               <Button alignment="CENTER" layoutX="392.0" layoutY="250.0" onAction="#carregarTelaCadastros" prefHeight="50.0" prefWidth="249.0" style="-fx-background-color: #046104; -fx-background-radius: 30;" text="Criar nova conta" textAlignment="CENTER" textFill="WHITE">
+               <Button alignment="CENTER" layoutX="628.0" layoutY="475.0" onAction="#carregarTelaCadastros" prefHeight="50.0" prefWidth="249.0" style="-fx-background-radius: 30;" stylesheets="@imagens/css/style.css" text="Criar nova conta" textAlignment="CENTER" textFill="WHITE">
                   <padding>
                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                   </padding>
@@ -30,11 +51,21 @@
                   </font>
                </Button>
                <ButtonBar layoutX="337.0" layoutY="310.0" />
-               <Text layoutX="52.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O PCDOOR tem como objetivo conectar pessoas com deficiências a estabelecimentos com acessibilidade e estrutura, se vocẽ possui um estabelecimento, cadastre-se, preencha os requisitos compatíveis com os requeridos, se vocẽ é frequentador de restaurantes, cinemas e etc, cadastre-se no site como usuário e avalie as acessibilidades disponibilizadas pelos estabelecimentos e também acesse as avaliações feitas por outros frequentadores." textAlignment="JUSTIFY" wrappingWidth="306.7161407470703">
+               <Text layoutX="143.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O PCDOOR tem como objetivo conectar pessoas com deficiências a estabelecimentos com acessibilidade e estrutura. Se você possui um estabelecimento, cadastre-se e disponibilize as acessibilidades oferecidas, se você é frequentador de restaurantes, cinemas e etc, cadastre-se no site como usuário e avalie as acessibilidades disponibilizadas e também acesse avaliações feitas por outros frequentadores." textAlignment="JUSTIFY" wrappingWidth="281.7161407470703">
                   <font>
                      <Font size="15.0" />
                   </font>
                </Text>
+               <ImageView fitHeight="77.0" fitWidth="74.0" layoutX="842.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/open-door.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="377.0" fitWidth="486.0" layoutX="572.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@imagens/paginainicial.png" />
+                  </image>
+               </ImageView>
             </children>
          </Pane>
          <padding>
