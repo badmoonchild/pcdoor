@@ -4,11 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 import ifpr.pgua.eic.pcdoor.model.FabricaConexoes;
 import ifpr.pgua.eic.pcdoor.model.entities.Usuario;
@@ -45,6 +40,48 @@ public class JDBCUsuarioDAO implements UsuarioDAO{
             System.out.println(e.getMessage());
             return Result.fail(e.getMessage());
         }
+    }
+
+    private Usuario buildFrom(ResultSet resultSet) throws SQLException{
+        String nome = resultSet.getString("nomeUsuario");
+        String email = resultSet.getString("emailUsuario");
+        String senha = resultSet.getString("senhaUsuario");
+
+        Usuario usuario = new Usuario(nome, email, senha);
+
+        return usuario;
+    }
+
+    @Override
+    public Usuario buscarEmail(String email) {
+        
+        Usuario usuario = null;
+
+        try{
+
+            Connection con = fabricaConexoes.getConnection(); 
+            
+            PreparedStatement pstm = con.prepareStatement("SELECT * FROM pcdoor_Usuario WHERE emailUsuario=?");
+
+            pstm.setString(1, email);
+
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                usuario = buildFrom(rs);
+            }
+
+            rs.close();
+            pstm.close();
+            con.close();
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+        return usuario;
+
     }
     
 }

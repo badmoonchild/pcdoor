@@ -18,5 +18,10 @@ public class UsuarioRepository {
 
         return dao.cadastrar(usuario);
     }
+
+    public Usuario buscarEmail(String email){
+
+        return dao.buscarEmail(email);
+    }
     
 }
