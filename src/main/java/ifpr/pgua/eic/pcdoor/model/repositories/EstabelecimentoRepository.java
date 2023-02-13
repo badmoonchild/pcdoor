@@ -28,4 +28,9 @@ public class EstabelecimentoRepository {
 
         return dao.buscarCnpj(cnpj);
     }
+
+    public Estabelecimento login(String email, String senha){
+
+        return dao.login(email, senha);
+    }
 }

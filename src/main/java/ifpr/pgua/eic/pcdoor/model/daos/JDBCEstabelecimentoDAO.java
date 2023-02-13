@@ -124,5 +124,46 @@ public class JDBCEstabelecimentoDAO implements EstabelecimentoDAO {
         return estabelecimento;
 
     }
+
+    @Override
+    public Estabelecimento login(String email, String senha) {
+
+        Estabelecimento estabelecimento = null;
+
+        try{
+
+            Connection con = fabricaConexoes.getConnection(); 
+            
+            PreparedStatement pstm = con.prepareStatement("SELECT * FROM pcdoor_Estabelecimento WHERE emailEstabelecimento=? and senhaEstabelecimento =?");
+
+            pstm.setString(1, email);
+            pstm.setString(2, senha);
+
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                estabelecimento = buildFrom(rs);
+                if(estabelecimento.getEmailEstabelecimento() == email && estabelecimento.getSenhaEstabelecimento() == senha){
+                    
+                    rs.close();
+                    pstm.close();
+                    con.close();
+
+                    return estabelecimento;
+                }
+            }
+
+            rs.close();
+            pstm.close();
+            con.close();
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+        return estabelecimento;
+    
+    }
     
 }

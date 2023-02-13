@@ -7,4 +7,5 @@ public interface EstabelecimentoDAO {
     Result cadastrar(Estabelecimento estabelecimento);
     Estabelecimento buscarEmail(String email);
     Estabelecimento buscarCnpj(String cnpj);
+    Estabelecimento login(String email, String senha);
 }

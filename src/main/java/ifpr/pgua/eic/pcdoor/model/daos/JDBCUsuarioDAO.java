@@ -83,5 +83,46 @@ public class JDBCUsuarioDAO implements UsuarioDAO{
         return usuario;
 
     }
+
+    @Override
+    public Usuario login(String email, String senha) {
+
+        Usuario usuario = null;
+
+        try{
+
+            Connection con = fabricaConexoes.getConnection(); 
+            
+            PreparedStatement pstm = con.prepareStatement("SELECT * FROM pcdoor_Usuario WHERE emailUsuario=? and senhaUsuario =?");
+
+            pstm.setString(1, email);
+            pstm.setString(2, senha);
+
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                usuario = buildFrom(rs);
+                if(usuario.getEmailUsuario() == email && usuario.getSenhaUsuario() == senha){
+                    
+                    rs.close();
+                    pstm.close();
+                    con.close();
+
+                    return usuario;
+                }
+            }
+
+            rs.close();
+            pstm.close();
+            con.close();
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+        return usuario;
+    
+    }
     
 }

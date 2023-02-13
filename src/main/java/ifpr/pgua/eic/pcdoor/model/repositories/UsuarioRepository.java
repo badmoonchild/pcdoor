@@ -23,5 +23,10 @@ public class UsuarioRepository {
 
         return dao.buscarEmail(email);
     }
+
+    public Usuario login(String email, String senha){
+
+        return dao.login(email, senha);
+    }
     
 }
