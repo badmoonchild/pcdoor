@@ -7,3 +7,12 @@
     -fx-background-color: linear-gradient(to right,#b42de4, #520078);
     
 }
+
+.button:hover {
+    -fx-background-color: #ffffff;
+    -fx-text-fill:#520078;
+    -fx-border-color: #520078;
+    -fx-border-radius: 30;
+    -fx-border-width: 2;
+
+  }
