@@ -31,10 +31,31 @@
                      <Image url="@imagens/Nosso%20time.png" />
                   </image>
                </ImageView>
-               <Label alignment="CENTER" layoutX="425.0" layoutY="183.0" text="Cadastre-se como:" textAlignment="CENTER">
+               <Label alignment="CENTER" layoutX="477.0" layoutY="204.0" text="Cadastre-se como:" textAlignment="CENTER">
                   <font>
-                     <Font size="50.0" />
+                     <Font size="35.0" />
                   </font>
+                  <textFill>
+                     <LinearGradient endX="0.7203791469194313">
+                        <stops>
+                           <Stop>
+                              <color>
+                                 <Color />
+                              </color>
+                           </Stop>
+                           <Stop offset="0.006711409395973154">
+                              <color>
+                                 <Color />
+                              </color>
+                           </Stop>
+                           <Stop offset="1.0">
+                              <color>
+                                 <Color />
+                              </color>
+                           </Stop>
+                        </stops>
+                     </LinearGradient>
+                  </textFill>
                </Label>
                <ImageView fitHeight="482.0" fitWidth="323.0" layoutX="1065.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
                   <image>
@@ -51,11 +72,16 @@
                      <Font name="System Bold" size="50.0" />
                   </font>
                   <textFill>
-                     <LinearGradient endX="1.0" endY="0.5071090047393365">
+                     <LinearGradient endX="0.7203791469194313">
                         <stops>
                            <Stop>
                               <color>
-                                 <Color red="0.3815789520740509" green="0.3815789520740509" blue="0.3815789520740509" />
+                                 <Color red="0.29411765933036804" blue="0.5098039507865906" />
+                              </color>
+                           </Stop>
+                           <Stop offset="0.006711409395973154">
+                              <color>
+                                 <Color red="0.29411765933036804" blue="0.5098039507865906" />
                               </color>
                            </Stop>
                            <Stop offset="1.0">

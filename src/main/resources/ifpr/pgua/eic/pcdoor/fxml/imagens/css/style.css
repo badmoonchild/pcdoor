@@ -16,3 +16,13 @@
     -fx-border-width: 2;
 
   }
+
+.listViewBackgroundColor{
+    -fx-background-color: linear-gradient(to right, #f0cdfc,#f8f8f8,);
+    -fx-border-radius: 30;
+}
+
+.scrollBar{
+    -fx-background-color: linear-gradient(to right,#b42de4, #520078);
+    scroll-behavior-color: #ffffff;
+}
