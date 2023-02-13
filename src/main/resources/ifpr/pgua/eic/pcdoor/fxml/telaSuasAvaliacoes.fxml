@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="backgroundColor" stylesheets="@imagens/css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.pcdoor.controllers.TelaEstabelecimento">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="backgroundColor" stylesheets="@imagens/css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.pcdoor.controllers.TelaSuasAvaliacoes">
 >
    <top>
       <VBox prefHeight="872.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
@@ -37,7 +37,7 @@
                         <Image url="@imagens/Ellipse%2090%20(Stroke).png" />
                      </image>
                   </ImageView>
-                  <Text layoutX="309.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Conheça os estabelecimentos cadastrados" textAlignment="CENTER" wrappingWidth="712.13671875">
+                  <Text layoutX="228.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui estão suas avaliações" textAlignment="CENTER" wrappingWidth="824.13671875">
                      <font>
                         <Font name="System Bold" size="35.0" />
                      </font>
@@ -58,18 +58,16 @@
                         </LinearGradient>
                      </fill>
                   </Text>
-                  <ListView layoutX="61.0" layoutY="120.0" opacity="0.65" prefHeight="537.0" prefWidth="266.0" style="-fx-background-radius: 10;" styleClass="listViewBackgroundColor" />
-                  <TextArea layoutX="336.0" layoutY="120.0" prefHeight="408.0" prefWidth="298.0" promptText="Descrição" style="-fx-background-color: #520078; -fx-border-radius: 10; -fx-border-width: 1;" styleClass="listViewBackgroundColor" stylesheets="@imagens/css/style.css" wrapText="true" />
+                  <ListView layoutX="66.0" layoutY="83.0" opacity="0.65" prefHeight="537.0" prefWidth="266.0" style="-fx-background-radius: 10;" styleClass="listViewBackgroundColor" />
+                  <TextArea layoutX="342.0" layoutY="98.0" prefHeight="408.0" prefWidth="298.0" promptText="Descrição" style="-fx-background-color: #520078; -fx-border-width: 20;" styleClass="listViewBackgroundColor" stylesheets="@imagens/css/style.css" wrapText="true" />
                   <ImageView fitHeight="556.0" fitWidth="351.0" layoutX="1029.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagens/Ellipse%2093%20(Stroke).png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="379.0" layoutY="477.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="95.0" style="-fx-background-radius: 30;" text="Avaliar" textFill="WHITE" />
-                  <Button layoutX="485.0" layoutY="477.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="115.0" style="-fx-background-radius: 30;" text="Excluir Avalição" textFill="WHITE" />
-                  <ImageView fitHeight="460.0" fitWidth="471.0" layoutX="671.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="460.0" fitWidth="471.0" layoutX="666.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imagens/5757169_2965738-removebg-preview.png" />
+                        <Image url="@imagens/14449314_5458424-removebg-preview.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="162.0" fitWidth="67.0" layoutX="95.0" layoutY="644.0" pickOnBounds="true" preserveRatio="true">
@@ -82,14 +80,15 @@
                         <Image url="@imagens/Ellipse%2090%20(Stroke).png" />
                      </image>
                   </ImageView>
-                  <ScrollBar layoutX="68.0" layoutY="135.0" orientation="VERTICAL" prefHeight="508.0" prefWidth="11.0" style="-fx-background-radius: 20;" styleClass="scrollBar" stylesheets="@imagens/css/style.css" />
-                  <Button layoutX="78.0" layoutY="669.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="233.0" style="-fx-background-radius: 30;" text="Suas Avaliações" />
-                  <ImageView fitHeight="52.0" fitWidth="50.0" layoutX="336.0" layoutY="607.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 30;">
+                  <ScrollBar layoutX="68.0" layoutY="98.0" orientation="VERTICAL" prefHeight="508.0" prefWidth="11.0" style="-fx-background-radius: 20;" styleClass="scrollBar" stylesheets="@imagens/css/style.css" />
+                  <Button layoutX="69.0" layoutY="629.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="261.0" style="-fx-background-radius: 30;" text="Voltar" textFill="WHITE" />
+                  <ImageView fitHeight="52.0" fitWidth="50.0" layoutX="342.0" layoutY="563.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 30;">
                      <image>
                         <Image url="@imagens/Avatar%202.png" />
                      </image>
                   </ImageView>
-                  <Text layoutX="374.0" layoutY="624.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem Vindo" textAlignment="CENTER" wrappingWidth="99.13671875">
+                  <Button layoutX="392.0" layoutY="582.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" style="-fx-background-radius: 30;" text="Sair" textFill="WHITE" />
+                  <Text layoutX="381.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem Vindo" textAlignment="CENTER" wrappingWidth="99.13671875">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -110,7 +109,6 @@
                         </LinearGradient>
                      </fill>
                   </Text>
-                  <Button layoutX="388.0" layoutY="631.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" style="-fx-background-radius: 30;" text="Sair" textFill="WHITE" />
                </children>
             </Pane>
          </children>
