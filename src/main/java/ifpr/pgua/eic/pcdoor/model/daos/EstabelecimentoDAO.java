@@ -5,4 +5,6 @@ import ifpr.pgua.eic.pcdoor.model.results.Result;
 
 public interface EstabelecimentoDAO {
     Result cadastrar(Estabelecimento estabelecimento);
+    Estabelecimento buscarEmail(String email);
+    Estabelecimento buscarCnpj(String cnpj);
 }

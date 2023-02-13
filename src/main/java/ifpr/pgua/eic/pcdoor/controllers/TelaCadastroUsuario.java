@@ -39,18 +39,38 @@ public class TelaCadastroUsuario {
         String email = tfEmail.getText();
         String senha = tfSenha.getText();
 
-        if(nome == null || email == null || senha == null){
+        if(nome == null){
             alert.setAlertType(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Ta em branco");
+            alert.setHeaderText("Insira seu nome!");
+            alert.showAndWait();
+        }
+        else if(email == null || !email.contains("@")){
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Insira um email valido!");
+            alert.showAndWait();
+        }
+        else if(senha == null){
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Insira sua senha!");
             alert.showAndWait();
         }
         else{
 
-            repository.cadastrarUsuario(nome, email, senha);
+            if(repository.buscarEmail(email) == null){
 
-            alert.setAlertType(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Cadastro concluido!");
-            alert.showAndWait();
+                repository.cadastrarUsuario(nome, email, senha);
+
+                alert.setAlertType(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Cadastro concluido!");
+                alert.showAndWait();
+            }
+            else{
+                alert.setAlertType(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Email ja cadastrado!");
+                alert.showAndWait();
+            }
+
+            
         }
 
     }

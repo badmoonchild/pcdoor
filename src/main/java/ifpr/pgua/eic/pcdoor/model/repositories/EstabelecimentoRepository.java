@@ -18,4 +18,14 @@ public class EstabelecimentoRepository {
 
         return dao.cadastrar(estabelecimento);
     }
+
+    public Estabelecimento buscarEmail(String email){
+
+        return dao.buscarEmail(email);
+    }
+
+    public Estabelecimento buscarCnpj(String cnpj){
+
+        return dao.buscarCnpj(cnpj);
+    }
 }

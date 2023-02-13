@@ -55,16 +55,61 @@ public class TelaCadastroEstabelecimento {
         int pontuacao = 0;
         String endereco = tfEndereco.getText();
 
-        if(nome == null || email == null || senha == null || tipo == null || cnpj == null || descricao == null || endereco == null){
+        if(nome == null ){
             alert.setAlertType(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Ta em branco");
+            alert.setHeaderText("Insira o nome do seu estabelecimento!");
+            alert.showAndWait();
+        }
+        else if(email == null || !email.contains("@")){
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Insira um email valido!");
+            alert.showAndWait();
+        }
+        else if(senha == null){
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Insira sua senha!");
+            alert.showAndWait();
+        }
+        else if(tipo == null){
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Insira qual o tipo do seu estabelecimento!");
+            alert.showAndWait();
+        }
+        else if(cnpj == null){
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Insira o cnpj!");
+            alert.showAndWait();
+        }
+        else if(descricao == null){
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Insira a descrição da acessibilidade do seu estabelecimento!");
+            alert.showAndWait();
+        }
+        else if(endereco == null){
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            alert.setHeaderText("Insira o endereco do seu estabelecimento!");
             alert.showAndWait();
         }
         else{
-            repository.cadastrarEstabelecimento(nome, email, senha, tipo, cnpj, descricao, pontuacao, endereco);
-            alert.setAlertType(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("Cadastro concluido!");
-            alert.showAndWait();
+
+            if(repository.buscarEmail(email) != null){
+                alert.setAlertType(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Email ja cadastrado!");
+                alert.showAndWait();
+            }
+            else if(repository.buscarCnpj(cnpj) != null){
+                alert.setAlertType(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Cnpj ja cadastrado!");
+                alert.showAndWait();
+            }
+            else{
+                repository.cadastrarEstabelecimento(nome, email, senha, tipo, cnpj, descricao, pontuacao, endereco);
+
+                alert.setAlertType(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Cadastro concluido!");
+                alert.showAndWait();
+            }
+            
         }
 
     }

@@ -2,6 +2,7 @@ package ifpr.pgua.eic.pcdoor.model.daos;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import ifpr.pgua.eic.pcdoor.model.FabricaConexoes;
@@ -43,6 +44,85 @@ public class JDBCEstabelecimentoDAO implements EstabelecimentoDAO {
             System.out.println(e.getMessage());
             return Result.fail(e.getMessage());
         }
+    }
+
+    private Estabelecimento buildFrom(ResultSet resultSet) throws SQLException{
+        String nome = resultSet.getString("nomeEstabelecimento");
+        String email = resultSet.getString("emailEstabelecimento");
+        String senha = resultSet.getString("senhaEstabelecimento");
+        String tipo = resultSet.getString("tipoEstabelecimento");
+        String cnpj = resultSet.getString("cnpj");
+        String descricao = resultSet.getString("descricaoAcessibilidade");
+        int pontuacao = resultSet.getInt("pontuacao");
+        String endereco = resultSet.getString("endereco");
+
+        Estabelecimento estabelecimento = new Estabelecimento(nome, email, senha, tipo, cnpj, descricao, pontuacao, endereco);
+
+        return estabelecimento;
+    }
+
+    @Override
+    public Estabelecimento buscarEmail(String email) {
+        
+        Estabelecimento estabelecimento = null;
+
+        try{
+
+            Connection con = fabricaConexoes.getConnection(); 
+            
+            PreparedStatement pstm = con.prepareStatement("SELECT * FROM pcdoor_Estabelecimento WHERE emailEstabelecimento=?");
+
+            pstm.setString(1, email);
+
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                estabelecimento = buildFrom(rs);
+            }
+
+            rs.close();
+            pstm.close();
+            con.close();
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+        return estabelecimento;
+
+    }
+
+    @Override
+    public Estabelecimento buscarCnpj(String cnpj) {
+        
+        Estabelecimento estabelecimento = null;
+
+        try{
+
+            Connection con = fabricaConexoes.getConnection(); 
+            
+            PreparedStatement pstm = con.prepareStatement("SELECT * FROM pcdoor_Estabelecimento WHERE cnpj=?");
+
+            pstm.setString(1, cnpj);
+
+            ResultSet rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                estabelecimento = buildFrom(rs);
+            }
+
+            rs.close();
+            pstm.close();
+            con.close();
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+
+        return estabelecimento;
+
     }
     
 }
