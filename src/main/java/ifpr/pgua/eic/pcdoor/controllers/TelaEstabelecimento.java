@@ -11,7 +11,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.MouseEvent;
 
 public class TelaEstabelecimento implements Initializable{
 
@@ -43,7 +42,7 @@ public class TelaEstabelecimento implements Initializable{
     }
 
     @FXML
-    private void mostrarDetalhes(MouseEvent evento){
+    private void mostrarDetalhes(){
         Estabelecimento estabelecimento = lvEstabelecimentos.getSelectionModel().getSelectedItem();
 
         if(estabelecimento != null){

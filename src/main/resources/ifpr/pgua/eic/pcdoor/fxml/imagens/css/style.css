@@ -19,7 +19,7 @@
 
 .listViewBackgroundColor{
     -fx-background-color: linear-gradient(to right, #f0cdfc,#f8f8f8,);
-    -fx-border-radius: 30;
+   
 }
 
 .scrollBar{

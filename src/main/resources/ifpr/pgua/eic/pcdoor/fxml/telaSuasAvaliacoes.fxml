@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -15,29 +15,56 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="backgroundColor" stylesheets="@imagens/css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.pcdoor.controllers.TelaSuasAvaliacoes">
->
+<BorderPane styleClass="backgroundColor" stylesheets="@imagens/css/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ifpr.pgua.eic.pcdoor.controllers.TelaSuasAvaliacoes">
    <top>
       <VBox prefHeight="872.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
-            <Pane prefHeight="840.0" prefWidth="1317.0">
+            <Pane accessibleRole="TEXT_AREA" cacheShape="false" prefHeight="984.0" prefWidth="1461.0">
                <children>
+                  <Pane layoutX="667.0" layoutY="101.0" prefHeight="279.0" prefWidth="283.0" style="-fx-background-color: #f1f1f1; -fx-border-radius: 20; -fx-background-radius: 20;">
+                     <children>
+                        <ComboBox layoutX="67.0" layoutY="66.0" prefWidth="150.0" />
+                        <Text layoutX="26.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avalie este estabelecimento você também!" textAlignment="CENTER" wrappingWidth="230.13671875">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <fill>
+                              <LinearGradient endX="0.5592417061611374" endY="0.8056872037914692" startX="0.26540284360189575">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.16403508186340332" blue="0.22368420660495758" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.4787280559539795" blue="0.4868420958518982" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                        <Button layoutX="26.0" layoutY="223.0" mnemonicParsing="false" onAction="#mostrarDetalhes" prefHeight="33.0" prefWidth="108.0" style="-fx-background-radius: 30;" text="Editar" textFill="WHITE" />
+                        <Button layoutX="163.0" layoutY="224.0" mnemonicParsing="false" onAction="#mostrarDetalhes" prefHeight="32.0" prefWidth="108.0" style="-fx-background-radius: 30;" text="Excluir Avaliação" textFill="WHITE" />
+                     </children>
+                  </Pane>
                   <ImageView fitHeight="162.0" fitWidth="67.0" layoutX="1098.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagens/Nosso%20time.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="162.0" fitWidth="67.0" layoutX="797.0" layoutY="507.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="162.0" fitWidth="67.0" layoutX="657.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagens/Nosso%20time.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="446.0" fitWidth="458.0" layoutX="-8.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="446.0" fitWidth="542.0" layoutX="-92.0" layoutY="-51.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagens/Ellipse%2090%20(Stroke).png" />
                      </image>
                   </ImageView>
-                  <Text layoutX="228.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui estão suas avaliações" textAlignment="CENTER" wrappingWidth="824.13671875">
+                  <Text layoutX="309.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Avaliações" textAlignment="CENTER" wrappingWidth="712.13671875">
                      <font>
                         <Font name="System Bold" size="35.0" />
                      </font>
@@ -58,19 +85,14 @@
                         </LinearGradient>
                      </fill>
                   </Text>
-                  <ListView layoutX="66.0" layoutY="83.0" opacity="0.65" prefHeight="537.0" prefWidth="266.0" style="-fx-background-radius: 10;" styleClass="listViewBackgroundColor" />
-                  <TextArea layoutX="342.0" layoutY="98.0" prefHeight="408.0" prefWidth="298.0" promptText="Descrição" style="-fx-background-color: #520078; -fx-border-width: 20;" styleClass="listViewBackgroundColor" stylesheets="@imagens/css/style.css" wrapText="true" />
+                  <ListView fx:id="lvEstabelecimentos" layoutX="65.0" layoutY="101.0" opacity="0.65" prefHeight="537.0" prefWidth="266.0" style="-fx-background-radius: 10;" styleClass="listViewBackgroundColor" />
+                  <TextArea fx:id="taDetalhes" cacheShape="false" editable="false" layoutX="350.0" layoutY="101.0" prefHeight="408.0" prefWidth="298.0" style="-fx-border-radius: 10; -fx-border-width: 1;" />
                   <ImageView fitHeight="556.0" fitWidth="351.0" layoutX="1029.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagens/Ellipse%2093%20(Stroke).png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="460.0" fitWidth="471.0" layoutX="666.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@imagens/14449314_5458424-removebg-preview.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="162.0" fitWidth="67.0" layoutX="95.0" layoutY="644.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="162.0" fitWidth="67.0" layoutX="89.0" layoutY="645.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagens/Nosso%20time.png" />
                      </image>
@@ -80,15 +102,61 @@
                         <Image url="@imagens/Ellipse%2090%20(Stroke).png" />
                      </image>
                   </ImageView>
-                  <ScrollBar layoutX="68.0" layoutY="98.0" orientation="VERTICAL" prefHeight="508.0" prefWidth="11.0" style="-fx-background-radius: 20;" styleClass="scrollBar" stylesheets="@imagens/css/style.css" />
-                  <Button layoutX="69.0" layoutY="629.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="261.0" style="-fx-background-radius: 30;" text="Voltar" textFill="WHITE" />
-                  <ImageView fitHeight="52.0" fitWidth="50.0" layoutX="342.0" layoutY="563.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 30;">
+                  <Button layoutX="82.0" layoutY="645.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="233.0" style="-fx-background-radius: 30;" text="Voltar" textFill="WHITE" />
+                  <ImageView fitHeight="52.0" fitWidth="50.0" layoutX="1047.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" style="-fx-border-radius: 30;">
                      <image>
                         <Image url="@imagens/Avatar%202.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="392.0" layoutY="582.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" style="-fx-background-radius: 30;" text="Sair" textFill="WHITE" />
-                  <Text layoutX="381.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem Vindo" textAlignment="CENTER" wrappingWidth="99.13671875">
+                  <Text layoutX="1088.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bem Vindo" textAlignment="CENTER" wrappingWidth="99.13671875">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="0.5592417061611374" endY="0.8056872037914692" startX="0.26540284360189575">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.29411765933036804" blue="0.5098039507865906" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+                  <Button layoutX="431.0" layoutY="459.0" mnemonicParsing="false" onAction="#mostrarDetalhes" prefHeight="27.0" prefWidth="137.0" style="-fx-background-radius: 30;" text="Ver Informações " textFill="WHITE" />
+                  <Text layoutX="76.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Suas Avaliações" textAlignment="CENTER" wrappingWidth="243.13671875">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="0.5592417061611374" endY="0.8056872037914692" startX="0.26540284360189575">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.29411765933036804" blue="0.5098039507865906" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+                  <ImageView accessibleRole="LIST_VIEW" fitHeight="442.0" fitWidth="448.0" layoutX="904.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagens/14449314_5458424-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="1088.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário" textAlignment="CENTER" wrappingWidth="99.13671875">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
