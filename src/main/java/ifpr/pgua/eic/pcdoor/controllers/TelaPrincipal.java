@@ -40,9 +40,7 @@ public class TelaPrincipal extends BaseController {
         estabelecimentoLogin = repositorioEstabelecimento.login(email, senha);
 
         if(usuarioLogin != null){
-            a.setAlertType(Alert.AlertType.INFORMATION);
-            a.setHeaderText("Usuario logado!");
-            a.showAndWait();
+            carregarTelaEstabelecimento();
         }
         else if(estabelecimentoLogin != null){
             a.setAlertType(Alert.AlertType.INFORMATION);
@@ -55,6 +53,11 @@ public class TelaPrincipal extends BaseController {
             a.showAndWait();
         }
 
+    }
+
+    @FXML
+    private void carregarTelaEstabelecimento(){
+        BaseAppNavigator.pushScreen("ESTABELECIMENTO");
     }
     
     @FXML

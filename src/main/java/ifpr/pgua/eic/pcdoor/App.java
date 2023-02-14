@@ -11,6 +11,7 @@ import java.io.IOException;
 import ifpr.pgua.eic.pcdoor.controllers.TelaCadastroEstabelecimento;
 import ifpr.pgua.eic.pcdoor.controllers.TelaCadastroUsuario;
 import ifpr.pgua.eic.pcdoor.controllers.TelaCadastros;
+import ifpr.pgua.eic.pcdoor.controllers.TelaEstabelecimento;
 import ifpr.pgua.eic.pcdoor.controllers.TelaPrincipal;
 import ifpr.pgua.eic.pcdoor.model.FabricaConexoes;
 import ifpr.pgua.eic.pcdoor.model.daos.EstabelecimentoDAO;
@@ -72,8 +73,7 @@ public class App extends BaseAppNavigator {
         registraTela("CADASTROS", new ScreenRegistryFXML(getClass(), "fxml/cadastros.fxml", (o)->new TelaCadastros()));
         registraTela("CADASTROUSUARIO", new ScreenRegistryFXML(getClass(), "fxml/cadastroUsuario.fxml", (o)->new TelaCadastroUsuario(usuarioRepository)));
         registraTela("CADASTROESTABELECIMENTO", new ScreenRegistryFXML(getClass(), "fxml/cadastroEstabelecimento.fxml", (o)->new TelaCadastroEstabelecimento(estabelecimentoRepository)));
-
-        //REGISTRAR AS OUTRAS TELAS
+        registraTela("ESTABELECIMENTO", new ScreenRegistryFXML(getClass(), "fxml/telaEstabelecimento.fxml", (o)->new TelaEstabelecimento(estabelecimentoRepository)));
 
     }
 

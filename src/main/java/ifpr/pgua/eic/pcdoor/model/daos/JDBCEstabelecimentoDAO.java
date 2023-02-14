@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import ifpr.pgua.eic.pcdoor.model.FabricaConexoes;
 import ifpr.pgua.eic.pcdoor.model.entities.Estabelecimento;
@@ -164,6 +167,36 @@ public class JDBCEstabelecimentoDAO implements EstabelecimentoDAO {
 
         return estabelecimento;
     
+    }
+
+    @Override
+    public List<Estabelecimento> listar() {
+
+        ArrayList<Estabelecimento> estabelecimentos = new ArrayList<>();
+
+        try{
+            Connection con = fabricaConexoes.getConnection();
+
+            PreparedStatement pstm = con.prepareStatement("SELECT * FROM pcdoor_Estabelecimento");
+
+            ResultSet rs = pstm.executeQuery();
+
+            while(rs.next()){
+                Estabelecimento estabelecimento = buildFrom(rs);
+
+                estabelecimentos.add(estabelecimento);
+            }
+            
+            rs.close();
+            pstm.close();
+            con.close();
+            
+            return estabelecimentos;
+
+        }catch(SQLException e ){
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
     
 }

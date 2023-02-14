@@ -55,37 +55,37 @@ public class TelaCadastroEstabelecimento {
         int pontuacao = 0;
         String endereco = tfEndereco.getText();
 
-        if(nome == null ){
+        if(nome == null || nome.isBlank()){
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insira o nome do seu estabelecimento!");
             alert.showAndWait();
         }
-        else if(email == null || !email.contains("@")){
+        else if(email == null || !email.contains(".com")  || !email.contains("@") || email.isBlank()){
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insira um email valido!");
             alert.showAndWait();
         }
-        else if(senha == null){
+        else if(senha == null || senha.isBlank()){
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insira sua senha!");
             alert.showAndWait();
         }
-        else if(tipo == null){
+        else if(tipo == null || tipo.isBlank()){
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insira qual o tipo do seu estabelecimento!");
             alert.showAndWait();
         }
-        else if(cnpj == null){
+        else if(cnpj == null || cnpj.isBlank()){
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insira o cnpj!");
             alert.showAndWait();
         }
-        else if(descricao == null){
+        else if(descricao == null || descricao.isBlank()){
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insira a descrição da acessibilidade do seu estabelecimento!");
             alert.showAndWait();
         }
-        else if(endereco == null){
+        else if(endereco == null || endereco.isBlank()){
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insira o endereco do seu estabelecimento!");
             alert.showAndWait();

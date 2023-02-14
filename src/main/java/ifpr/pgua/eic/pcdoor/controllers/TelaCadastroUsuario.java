@@ -39,17 +39,17 @@ public class TelaCadastroUsuario {
         String email = tfEmail.getText();
         String senha = tfSenha.getText();
 
-        if(nome == null){
+        if(nome == null || nome.isBlank()){
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insira seu nome!");
             alert.showAndWait();
         }
-        else if(email == null || !email.contains("@")){
+        else if(email == null || !email.contains(".com")  || !email.contains("@") || email.isBlank()){
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insira um email valido!");
             alert.showAndWait();
         }
-        else if(senha == null){
+        else if(senha == null || senha.isBlank()){
             alert.setAlertType(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Insira sua senha!");
             alert.showAndWait();

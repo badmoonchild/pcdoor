@@ -110,5 +110,11 @@ public class Estabelecimento {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+
+    public String toString(){
+        String str = nomeEstabelecimento;
+
+        return str;
+    }
     
 }

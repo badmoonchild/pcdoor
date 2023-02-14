@@ -1,5 +1,7 @@
 package ifpr.pgua.eic.pcdoor.model.repositories;
 
+import java.util.List;
+
 import ifpr.pgua.eic.pcdoor.model.daos.EstabelecimentoDAO;
 import ifpr.pgua.eic.pcdoor.model.entities.Estabelecimento;
 import ifpr.pgua.eic.pcdoor.model.results.Result;
@@ -32,5 +34,9 @@ public class EstabelecimentoRepository {
     public Estabelecimento login(String email, String senha){
 
         return dao.login(email, senha);
+    }
+
+    public List<Estabelecimento> listarEstabelecimentos(){
+        return dao.listar();
     }
 }
