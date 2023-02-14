@@ -2,6 +2,7 @@ package ifpr.pgua.eic.pcdoor.controllers;
 
 import ifpr.pgua.eic.pcdoor.model.entities.Estabelecimento;
 import ifpr.pgua.eic.pcdoor.model.entities.Usuario;
+import ifpr.pgua.eic.pcdoor.model.entities.Validacao;
 import ifpr.pgua.eic.pcdoor.model.repositories.EstabelecimentoRepository;
 import ifpr.pgua.eic.pcdoor.model.repositories.UsuarioRepository;
 import ifpr.pgua.eic.pcdoor.utils.Navigator.BaseAppNavigator;
@@ -30,6 +31,8 @@ public class TelaPrincipal extends BaseController {
 
     public void entrar(){
 
+        Validacao validacao = Validacao.getInstance();
+
         Alert a = new Alert(Alert.AlertType.NONE);
 
         String email = tfEmail.getText();
@@ -40,6 +43,7 @@ public class TelaPrincipal extends BaseController {
         estabelecimentoLogin = repositorioEstabelecimento.login(email, senha);
 
         if(usuarioLogin != null){
+            validacao.setUsuario(usuarioLogin);
             carregarTelaEstabelecimento();
         }
         else if(estabelecimentoLogin != null){
@@ -64,6 +68,4 @@ public class TelaPrincipal extends BaseController {
     private void carregarTelaCadastros(){
         BaseAppNavigator.pushScreen("CADASTROS");
     }
-
-
 }

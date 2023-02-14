@@ -14,10 +14,13 @@ import ifpr.pgua.eic.pcdoor.controllers.TelaCadastros;
 import ifpr.pgua.eic.pcdoor.controllers.TelaEstabelecimento;
 import ifpr.pgua.eic.pcdoor.controllers.TelaPrincipal;
 import ifpr.pgua.eic.pcdoor.model.FabricaConexoes;
+import ifpr.pgua.eic.pcdoor.model.daos.AvaliacaoDAO;
 import ifpr.pgua.eic.pcdoor.model.daos.EstabelecimentoDAO;
+import ifpr.pgua.eic.pcdoor.model.daos.JDBCAvaliacaoDAO;
 import ifpr.pgua.eic.pcdoor.model.daos.JDBCEstabelecimentoDAO;
 import ifpr.pgua.eic.pcdoor.model.daos.JDBCUsuarioDAO;
 import ifpr.pgua.eic.pcdoor.model.daos.UsuarioDAO;
+import ifpr.pgua.eic.pcdoor.model.repositories.AvaliacaoRepository;
 import ifpr.pgua.eic.pcdoor.model.repositories.EstabelecimentoRepository;
 import ifpr.pgua.eic.pcdoor.model.repositories.UsuarioRepository;
 import ifpr.pgua.eic.pcdoor.utils.Navigator.BaseAppNavigator;
@@ -33,7 +36,8 @@ public class App extends BaseAppNavigator {
     private UsuarioRepository usuarioRepository;
     private EstabelecimentoDAO estabelecimentoDAO;
     private EstabelecimentoRepository estabelecimentoRepository;
-
+    private AvaliacaoDAO avaliacaoDAO;
+    private AvaliacaoRepository avaliacaoRepository;
 
     @Override
     public void init() throws Exception {
@@ -44,6 +48,8 @@ public class App extends BaseAppNavigator {
         usuarioRepository = new UsuarioRepository(usuarioDAO);
         estabelecimentoDAO = new JDBCEstabelecimentoDAO(FabricaConexoes.getInstance());
         estabelecimentoRepository = new EstabelecimentoRepository(estabelecimentoDAO);
+        avaliacaoDAO = new JDBCAvaliacaoDAO(FabricaConexoes.getInstance());
+        avaliacaoRepository = new AvaliacaoRepository(avaliacaoDAO);
     
     }
 
@@ -73,9 +79,7 @@ public class App extends BaseAppNavigator {
         registraTela("CADASTROS", new ScreenRegistryFXML(getClass(), "fxml/cadastros.fxml", (o)->new TelaCadastros()));
         registraTela("CADASTROUSUARIO", new ScreenRegistryFXML(getClass(), "fxml/cadastroUsuario.fxml", (o)->new TelaCadastroUsuario(usuarioRepository)));
         registraTela("CADASTROESTABELECIMENTO", new ScreenRegistryFXML(getClass(), "fxml/cadastroEstabelecimento.fxml", (o)->new TelaCadastroEstabelecimento(estabelecimentoRepository)));
-        registraTela("ESTABELECIMENTO", new ScreenRegistryFXML(getClass(), "fxml/telaEstabelecimento.fxml", (o)->new TelaEstabelecimento(estabelecimentoRepository)));
+        registraTela("ESTABELECIMENTO", new ScreenRegistryFXML(getClass(), "fxml/telaEstabelecimento.fxml", (o)->new TelaEstabelecimento(estabelecimentoRepository, avaliacaoRepository)));
 
     }
-
-
 }
